@@ -1,0 +1,14 @@
+{
+  "operation_id": "60eaa568-c927-4681-8229-dad06874503f",
+  "timestamp": "2026-09-04T14:39:00.875656236+00:00",
+  "target": "/home/clumsyoof/sih/demo/secret_evidence.jpg",
+  "target_size_bytes": 1921,
+  "method": "AES-256-Crypto-Erase",
+  "pre_sha256": "e572c3f5c6f978b15f0a516e81f15fd557ec44c032707070748ef764bf3b38dc",
+  "post_sha256": "5ce28b28767437d1730a7272e8070bbdbc629d336dbea8698777505a37d75017",
+  "pre_entropy": 7.415595901225624,
+  "post_entropy": 7.9092926267616805,
+  "passes_completed": 1,
+  "status": "SUCCESS",
+  "hmac_signature": "da8fcbbcbd0538cc0296bc131eb0ba14d59e45744c65c51883e5b32f330cf1fb"
+}

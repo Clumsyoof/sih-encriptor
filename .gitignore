@@ -1,0 +1,27 @@
+# Rust build artifacts
+target/
+**/target/
+sih-core/target/
+**/*.rs.bk
+
+# Go build artifacts
+sih-tui/sih-tui
+sih-tui/sih-tui.exe
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+
+# Problem statement & notes
+implementation.md
+implementation(1).md
+
+# Editor & OS files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
