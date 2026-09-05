@@ -83,7 +83,7 @@ const (
 	numTabs       = 4
 )
 
-var tabNames = []string{"🔒 Secure Erase", "🔍 File Carver", "🧩 Bifragment", "📜 Audit Log"}
+var tabNames = []string{"1.Secure Erase", "2.File Carver", "3.Bifragment", "4.Audit Log"}
 
 // ── Async Messages ────────────────────────────────────────────────────────────
 type (
@@ -354,7 +354,7 @@ func (m model) View() string {
 
 	// File picker overlay
 	if m.showPicker {
-		header := titleStyle.Render(" 🗂  SELECT FILE  [ESC] Cancel ")
+		header := titleStyle.Render(" SELECT FILE  [ESC] Cancel ")
 		hint := dimStyle.Render("Navigate with ↑↓, Enter to select, ESC to cancel")
 		return lipgloss.JoinVertical(lipgloss.Left,
 			header,
@@ -365,7 +365,7 @@ func (m model) View() string {
 		)
 	}
 
-	title := titleStyle.Render("  SIH-26149 ◈ SECURE DATA ERASURE & ADVANCED FILE RECOVERY ◈ NTRO  ")
+	title := titleStyle.Render("  SIH-26149 |SECURE DATA ERASURE & ADVANCE RECOVERY| BANNANA PUDDING  ")
 
 	tabs := buildTabBar(m.activeTab)
 
@@ -417,7 +417,7 @@ func buildTabBar(active int) string {
 
 // ── Eraser View ───────────────────────────────────────────────────────────────
 func (m model) viewEraser() string {
-	header := purpleStyle.Render("◈ AES-256 In-Place Crypto Eraser")
+	header := purpleStyle.Render("AES-256 In-Place Crypto Eraser")
 
 	targetStr := m.eraseTarget
 	if targetStr == "" {
@@ -443,7 +443,7 @@ func (m model) viewEraser() string {
 		c := m.eraserCert
 		result = lipgloss.JoinVertical(lipgloss.Left,
 			"",
-			successStyle.Render("✓ ERASURE COMPLETE — KEY ZEROIZED FROM RAM"),
+			successStyle.Render("ERASURE COMPLETE — KEY ZEROIZED FROM RAM"),
 			fmt.Sprintf("  %s %s", labelStyle.Render("Method:  "), valueStyle.Render(c.Method)),
 			fmt.Sprintf("  %s %.4f  →  %s  Δ%s",
 				labelStyle.Render("Entropy: "),
@@ -454,7 +454,7 @@ func (m model) viewEraser() string {
 			fmt.Sprintf("  %s %s", labelStyle.Render("HMAC:    "), dimStyle.Render(c.HMACSignature[:32]+"…")),
 		)
 	} else if m.eraserState == stateError {
-		result = "\n" + errorStyle.Render("✗ Error: "+m.eraserErr)
+		result = "\n" + errorStyle.Render("Error: "+m.eraserErr)
 	}
 
 	// Hex panel
@@ -617,7 +617,7 @@ func formatHexDumpDiff(before, after []byte, cols int) string {
 
 // ── Carver View ───────────────────────────────────────────────────────────────
 func (m model) viewCarver() string {
-	header := purpleStyle.Render("◈ Raw Sector File Carver")
+	header := purpleStyle.Render("Raw Sector File Carver")
 	info := fmt.Sprintf("%s %s\n%s %s",
 		labelStyle.Render("Image: "), valueStyle.Render(m.diskImagePath),
 		labelStyle.Render("Output:"), valueStyle.Render(m.outputDir),
@@ -642,7 +642,7 @@ func (m model) viewCarver() string {
 
 // ── Bifragment View ───────────────────────────────────────────────────────────
 func (m model) viewBifragment() string {
-	header := purpleStyle.Render("◈ Bifragment Gap Reconstruction")
+	header := purpleStyle.Render("Bifragment Gap Reconstruction")
 	desc := dimStyle.Render("Detects JPEGs split across non-contiguous sectors with foreign\ndata in the gap. Standard tools produce a corrupted image.\nThis engine bridges the gap using JPEG marker stream validation.")
 
 	body := ""
